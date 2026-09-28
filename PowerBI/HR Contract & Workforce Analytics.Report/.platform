@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "HR Contract & Workforce Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f9fe2e0c-afd7-438f-b2e5-ae904adec3c2"
+  }
+}

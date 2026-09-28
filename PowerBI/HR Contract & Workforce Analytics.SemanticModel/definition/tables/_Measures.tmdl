@@ -1,0 +1,74 @@
+table _Measures
+	lineageTag: 3b2e5999-a5b3-4172-9fd4-9d0495d64343
+
+	measure 'Employees Active' = CALCULATE(COUNTROWS(HR_DATA), HR_DATA[employee_status] = "Active")
+		formatString: #,0
+		displayFolder: Overview
+		lineageTag: cbe40909-2c35-4b06-afc2-4b78a9239984
+
+	measure 'Employees Left' = CALCULATE(COUNTROWS(HR_DATA), HR_DATA[employee_status] = "Left")
+		formatString: #,0
+		displayFolder: Overview
+		lineageTag: ff3f4da7-35ad-4b51-a6c2-b0f17d90a43c
+
+	measure 'Attrition Rate' = DIVIDE([Employees Left], COUNTROWS(HR_DATA))
+		formatString: 0.0%
+		displayFolder: Overview
+		lineageTag: 1abbdf73-b3e5-4c3e-b5b4-147f2946123e
+
+	measure 'Employees Left by Exit Date' =
+			CALCULATE(
+			    COUNTROWS(HR_DATA),
+			    USERELATIONSHIP(Calendar[Date], HR_DATA[statement_valid_date]),
+			    HR_DATA[employee_status] = "Left"
+			)
+		formatString: #,0
+		displayFolder: Time
+		lineageTag: 3cc114b3-82cf-4191-80f9-d4d3cf701825
+
+	measure 'Unilateral Resignation Rate' =
+			DIVIDE(
+			    CALCULATE([Employees Left], HR_DATA[termination_reason_group] = "Employee Resignation"),
+			    [Employees Left]
+			)
+		formatString: 0.0%
+		displayFolder: Termination
+		lineageTag: ca8bbefe-8241-46b0-8f3d-2af83f8db9cf
+
+	measure '% Share of Total Leavers' =
+			DIVIDE(
+			    [Employees Left],
+			    CALCULATE([Employees Left], ALL(HR_DATA[CB]))
+			)
+		formatString: 0.0%
+		displayFolder: By CB
+		lineageTag: e77d139f-fd31-43eb-ae2e-525c7976b85d
+
+	measure 'Avg Tenure of Leavers (Years)' = CALCULATE(AVERAGE(HR_DATA[tenure_years]), HR_DATA[employee_status] = "Left")
+		formatString: 0.0
+		displayFolder: Termination
+		lineageTag: 71b60490-27fc-42b8-aae9-2cdf7dc93c57
+
+	measure 'Avg Tenure of Active (Years)' = CALCULATE(AVERAGE(HR_DATA[tenure_years]), HR_DATA[employee_status] = "Active")
+		formatString: 0.0
+		displayFolder: Overview
+		lineageTag: a3e5727b-e960-4ca1-b5df-d3953da3695e
+
+	measure Hires =
+			CALCULATE(
+			    COUNTROWS(HR_DATA),
+			    USERELATIONSHIP(Calendar[Date], HR_DATA[employee_work_date])
+			)
+		formatString: #,0
+		displayFolder: Time
+		lineageTag: c0242518-3a68-4ebf-b1ab-8b608ce9155a
+
+	column Value
+		lineageTag: 2ba0e3da-d5d1-4c55-8677-63b2b5f58c84
+		isNameInferred
+		sourceColumn: [Value]
+
+	partition _Measures = calculated
+		mode: import
+		source = {BLANK()}
+

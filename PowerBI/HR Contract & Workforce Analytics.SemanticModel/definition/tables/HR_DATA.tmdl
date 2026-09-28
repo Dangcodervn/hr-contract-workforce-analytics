@@ -1,0 +1,238 @@
+table HR_DATA
+	lineageTag: 9fefeaf3-0c4c-4d71-bbda-8ce8aa632144
+
+	column employee_code
+		dataType: int64
+		formatString: 0
+		lineageTag: eb585135-de2b-47ca-a8a0-e568c75f6a8a
+		summarizeBy: count
+		sourceColumn: employee_code
+
+		annotation SummarizationSetBy = User
+
+	column employee_first_name
+		dataType: string
+		lineageTag: f4e93e99-5ccf-4e86-b413-6e3559f1655d
+		summarizeBy: none
+		sourceColumn: employee_first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_last_name
+		dataType: string
+		lineageTag: d045e371-2bf8-4071-aeb4-1df174c2da66
+		summarizeBy: none
+		sourceColumn: employee_last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_work_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c18329a8-73f5-4050-8a4c-369a229ccc32
+		summarizeBy: none
+		sourceColumn: employee_work_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column statement_type
+		dataType: string
+		lineageTag: fd29d43e-e793-4698-bdfb-191718d28379
+		summarizeBy: none
+		sourceColumn: statement_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column statement_valid_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bea6f506-bed3-4f45-ad79-c55fc2479163
+		summarizeBy: none
+		sourceColumn: statement_valid_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column statement_name
+		dataType: string
+		lineageTag: a85572d7-ab87-467b-9b33-0eeaa5c00e3c
+		summarizeBy: none
+		sourceColumn: statement_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column PT
+		dataType: string
+		lineageTag: 075927c3-9138-4707-8a36-53a471ecdcdb
+		summarizeBy: none
+		sourceColumn: PT
+
+		annotation SummarizationSetBy = Automatic
+
+	column CB
+		dataType: string
+		lineageTag: 2e326aec-a0ab-4016-8736-845f8a13ef5f
+		summarizeBy: none
+		sourceColumn: CB
+
+		annotation SummarizationSetBy = Automatic
+
+	column NG
+		dataType: string
+		lineageTag: 5cfbdec7-3b91-41d7-8290-f8ecf3b294d5
+		summarizeBy: none
+		sourceColumn: NG
+
+		annotation SummarizationSetBy = Automatic
+
+	column work_location
+		dataType: string
+		lineageTag: 83237038-b851-464d-b788-45528efad86e
+		summarizeBy: none
+		sourceColumn: work_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column KH200
+		dataType: string
+		lineageTag: 34aa7532-739b-4396-ae0b-ecce52483ac2
+		summarizeBy: none
+		sourceColumn: KH200
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_status
+		dataType: string
+		lineageTag: c5f939ca-4160-4881-ae71-c061945d6aac
+		summarizeBy: none
+		sourceColumn: employee_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column termination_reason_group
+		dataType: string
+		lineageTag: c48fab9e-3819-4f62-88fc-7f666975e482
+		summarizeBy: none
+		sourceColumn: termination_reason_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_year
+		dataType: string
+		lineageTag: 64bac532-82bc-47f5-9b2e-1222d60b606e
+		summarizeBy: none
+		sourceColumn: hire_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_month
+		dataType: string
+		isHidden
+		lineageTag: 90f0eb84-5e58-4a21-8c7f-baa72a20200a
+		summarizeBy: none
+		sourceColumn: hire_month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column exit_month
+		dataType: string
+		isHidden
+		lineageTag: cb68af6a-8691-4db4-9ad3-232d0620da5f
+		summarizeBy: none
+		sourceColumn: exit_month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_name
+		dataType: string
+		lineageTag: 53f674a7-d2ad-452d-8b57-6814942228de
+		summarizeBy: none
+		sourceColumn: full_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column hire_month_name
+		dataType: string
+		lineageTag: f53cb411-6005-46bb-acb2-864d70bbcd86
+		summarizeBy: none
+		sourceColumn: hire_month_name
+		sortByColumn: hire_month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column exit_month_name
+		dataType: string
+		lineageTag: a96d68cb-72df-41e0-833c-9e747aa6e1a3
+		summarizeBy: none
+		sourceColumn: exit_month_name
+		sortByColumn: exit_month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenure_years
+		dataType: string
+		lineageTag: ffd2e7c2-7ab8-4b96-b09a-dd92b83be981
+		summarizeBy: none
+		sourceColumn: tenure_years
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenure_group
+		dataType: string
+		lineageTag: 6c9ae537-8bf7-4504-8f26-4c9ad16551b5
+		summarizeBy: none
+		sourceColumn: tenure_group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition HR_DATA = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("D:\Data Self Learning\Tran Hoang Long _ Data Analyst Course\Data Analyst\HR Contract & Workforce Analytics\HR_DATA.csv"), [Delimiter = ",", Columns = 41, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"employee_code", Int64.Type}, {"employee_first_name", type text}, {"employee_last_name", type text}, {"employee_work_date", type date}, {"ID", Int64.Type}, {"statement_employee_code", Int64.Type}, {"statement_type", type text}, {"statement_code", type text}, {"statement_valid_date", type date}, {"statement_expired_date", type date}, {"statement_created_date", type date}, {"statement_status", type text}, {"statement_note", type text}, {"statement_file_scan", type text}, {"statement_name", type text}, {"HRC", Int64.Type}, {"PT", type text}, {"HD", type text}, {"SP", type text}, {"CH", Int64.Type}, {"HRB", type text}, {"DV", type text}, {"CB", type text}, {"NG", type text}, {"work_location", type text}, {"KN", Int64.Type}, {"DVC", type text}, {"PC100", Int64.Type}, {"PC200", type text}, {"PC300", type text}, {"PC400", type text}, {"PC900", Int64.Type}, {"KH100", type text}, {"KH200", type text}, {"KH300", type text}, {"HAM", type text}, {"NG_PHU", type text}, {"created_at", type date}, {"modified_at", type date}, {"PB", type text}, {"ETL_timestamp", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed column type",{"ID", "ETL_timestamp", "NG_PHU", "HAM", "KH100", "PC900", "PC400", "PC300", "PC200", "PC100", "DVC", "KN", "PB", "CH", "HRB", "HRC", "statement_file_scan", "statement_note", "statement_status", "statement_code", "KH300", "DV", "SP", "HD", "modified_at", "created_at", "statement_created_date", "statement_expired_date", "statement_employee_code"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Removed Columns", "employee_status", each if [statement_type] = "ZG - Chấm dứt HĐLĐ" then "Left" else "Active"),
+				    #"Added Custom" = Table.AddColumn(#"Added Conditional Column", "termination_reason_group", each if [employee_status] = "Left" then
+				    if Text.StartsWith([statement_name], "GA") then "Employee Resignation"
+				    else if Text.StartsWith([statement_name], "GB") then "Company Termination"
+				    else if Text.StartsWith([statement_name], "GC") then "Mutual Agreement"
+				    else "Other"
+				else null),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "hire_year", each Date.Year([employee_work_date])),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "hire_month", each Date.Month([employee_work_date])),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "exit_month", each if [employee_status] = "Left" then Date.Month([statement_valid_date]) else null),
+				    #"Added Custom4" = Table.AddColumn(#"Added Custom3", "full_name", each [employee_first_name] & " " & [employee_last_name]),
+				    #"Added Custom5" = Table.AddColumn(#"Added Custom4", "hire_month_name", each "Tháng " & Number.ToText([hire_month], "00")),
+				    #"Added Custom6" = Table.AddColumn(#"Added Custom5", "exit_month_name", each if [exit_month] <> null then "Tháng " & Number.ToText([exit_month], "00") else null),
+				    #"Added Custom7" = Table.AddColumn(#"Added Custom6", "tenure_years", each if [employee_work_date] = null then null
+				else
+				    let
+				        ref_date = if [employee_status] = "Left" then [statement_valid_date] else #date(2019,12,9),
+				        raw_days = Duration.Days(ref_date - [employee_work_date])
+				    in
+				        if raw_days < 0 then null else Number.Round(raw_days / 365.25, 1)),
+				    #"Added Custom8" = Table.AddColumn(#"Added Custom7", "tenure_group", each if [tenure_years] = null then "Không xác định"
+				else if [tenure_years] < 1 then "Dưới 1 năm"
+				else if [tenure_years] < 3 then "1-3 năm"
+				else if [tenure_years] < 5 then "3-5 năm"
+				else "Trên 5 năm")
+				in
+				    #"Added Custom8"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

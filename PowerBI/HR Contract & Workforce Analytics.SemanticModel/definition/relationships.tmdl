@@ -1,0 +1,9 @@
+relationship d67d441e-9a14-fa8a-7901-9d54c079d6cf
+	fromColumn: HR_DATA.employee_work_date
+	toColumn: Calendar.Date
+
+relationship 74c311de-13cf-e496-b853-b767f250d261
+	isActive: false
+	fromColumn: HR_DATA.statement_valid_date
+	toColumn: Calendar.Date
+

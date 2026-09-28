@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "HR_DATA",
+          "nodeLineageTag": "9fefeaf3-0c4c-4d71-bbda-8ce8aa632144",
+          "size": {
+            "height": 636,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 476,
+            "y": 59
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "e33176cc-7815-41e7-88a4-b509e1f53320",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 760,
+            "y": 168
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "3b2e5999-a5b3-4172-9fd4-9d0495d64343",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

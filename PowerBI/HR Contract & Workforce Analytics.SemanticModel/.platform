@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "HR Contract & Workforce Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5ee00713-6f18-4eb2-a701-a44d2a602f77"
+  }
+}
