@@ -1,0 +1,148 @@
+{
+  "name": "TOPICA Gold",
+  "dataColors": [
+    "#B8904A",
+    "#1A2B4C",
+    "#E3C88E",
+    "#6B7280",
+    "#8A6A2F",
+    "#4A6FA5",
+    "#2E8B57",
+    "#C0392B"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#2B2B2B",
+  "tableAccent": "#B8904A",
+  "good": "#2E8B57",
+  "neutral": "#E3C88E",
+  "bad": "#C0392B",
+  "maximum": "#8A6A2F",
+  "center": "#E3C88E",
+  "minimum": "#FBF6EC",
+  "null": "#D1D5DB",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1A2B4C"
+    },
+    "title": {
+      "fontSize": 13,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2B2B2B"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#2B2B2B"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#4B5563"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#2B2B2B"
+              }
+            },
+            "fontSize": 13
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#E8DCC4"
+              }
+            },
+            "radius": 6
+          }
+        ],
+        "visualHeader": [
+          {
+            "background": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": "#8A6A2F"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F7F3EC"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "#8A6A2F"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "columnHeaders": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": "#8A6A2F"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

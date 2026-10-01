@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "a0ea4c8cb528d898b176",
+  "position": {
+    "x": 1569.8480243161096,
+    "y": 48.145896656534951,
+    "z": 4000,
+    "height": 128.38905775075989,
+    "width": 302.00607902735561,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Tenure of Active (Years)"
+                }
+              },
+              "queryRef": "_Measures.Avg Tenure of Active (Years)",
+              "nativeQueryRef": "Thâm niên trung bình",
+              "displayName": "Thâm niên trung bình"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Avg Tenure of Active (Years)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

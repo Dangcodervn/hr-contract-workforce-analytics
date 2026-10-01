@@ -35,13 +35,13 @@ table _Measures
 		displayFolder: Termination
 		lineageTag: ca8bbefe-8241-46b0-8f3d-2af83f8db9cf
 
-	measure '% Share of Total Leavers' =
+	measure '% Share of Total Leavers By CB' =
 			DIVIDE(
 			    [Employees Left],
 			    CALCULATE([Employees Left], ALL(HR_DATA[CB]))
 			)
 		formatString: 0.0%
-		displayFolder: By CB
+		displayFolder: Turnover
 		lineageTag: e77d139f-fd31-43eb-ae2e-525c7976b85d
 
 	measure 'Avg Tenure of Leavers (Years)' = CALCULATE(AVERAGE(HR_DATA[tenure_years]), HR_DATA[employee_status] = "Left")
@@ -62,6 +62,55 @@ table _Measures
 		formatString: #,0
 		displayFolder: Time
 		lineageTag: c0242518-3a68-4ebf-b1ab-8b608ce9155a
+
+	measure 'Hires (Last Year)' =
+			CALCULATE(
+			    [Hires],
+			    DATEADD(Calendar[Date], -1, YEAR)
+			)
+		formatString: #,0
+		displayFolder: Time
+		lineageTag: d1d8dc06-cdef-4e0d-993e-c69804dbda56
+
+	measure 'Employees Left (Last Year)' =
+			CALCULATE(
+			    [Employees Left by Exit Date],
+			    DATEADD(Calendar[Date], -1, YEAR)
+			)
+		formatString: #,0
+		displayFolder: Time
+		lineageTag: b59e632f-1561-4a72-b01a-22bda0862393
+
+	measure 'Retention (≥1 năm)' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS(HR_DATA), HR_DATA[tenure_years] >= 1),
+			    COUNTROWS(HR_DATA)
+			)
+		formatString: 0%;-0%;0%
+		displayFolder: Retention
+		lineageTag: 817fbda6-fd0a-4d24-99ec-b0941ef2ed19
+
+	measure 'Hires (Latest Year)' =
+			
+			CALCULATE(
+			    [Hires],
+			    USERELATIONSHIP(Calendar[Date], HR_DATA[employee_work_date]),
+			    Calendar[year] = MAX(Calendar[year])
+			)
+		formatString: 0
+		displayFolder: Overview
+		lineageTag: 5d6861e4-3679-4fe3-a97f-69c5dad23846
+
+	measure '% Share of Total Leavers (by NG)' =
+			
+			DIVIDE(
+			    [Employees Left],
+			    CALCULATE([Employees Left], ALL(HR_DATA[NG]))
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Turnover
+		lineageTag: 0122951d-e47e-49fb-96f4-f96985d45053
 
 	column Value
 		lineageTag: 2ba0e3da-d5d1-4c55-8677-63b2b5f58c84

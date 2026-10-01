@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e7ee77feecc05b8ee19d",
+  "position": {
+    "x": 587.23404255319156,
+    "y": 48.145896656534951,
+    "z": 5000,
+    "height": 128.38905775075989,
+    "width": 302.00607902735561,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Hires (Latest Year)"
+                }
+              },
+              "queryRef": "_Measures.Hires (Latest Year)",
+              "nativeQueryRef": "Số người mới tuyển",
+              "displayName": "Số người mới tuyển"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Hires (Latest Year)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
